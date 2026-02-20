@@ -1,14 +1,14 @@
 colorScheme = "neural"
 defaultAppearance = "dark"
 autoSwitchAppearance = false
-defaultBackgroundImage = "img/hero.png"
+defaultBackgroundImage = "img/hero.jpg"
 
 enableSearch = true
 enableCodeCopy = true
 
 [homepage]
   layout = "background"
-  homepageImage = "img/hero.png"
+  homepageImage = "img/hero.jpg"
   layoutBackgroundBlur = true
   showRecent = true
   showRecentItems = 6
