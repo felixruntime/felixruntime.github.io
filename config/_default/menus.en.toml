@@ -1,0 +1,14 @@
+[[main]]
+  name = "Blog"
+  pageRef = "blog"
+  weight = 10
+
+[[main]]
+  name = "The Agentic Lab"
+  pageRef = "projects"
+  weight = 20
+
+[[main]]
+  name = "Low-Level Foundation"
+  pageRef = "foundation"
+  weight = 30

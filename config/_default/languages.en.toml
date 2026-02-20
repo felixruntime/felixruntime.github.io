@@ -1,0 +1,17 @@
+languageName = "English"
+weight = 1
+
+[params]
+  displayName = "felixruntime"
+  isoCode = "en"
+
+[params.author]
+  name = "felixruntime"
+  image = "img/author.jpg"
+  headline = "Software Engineer & AI Agent Architect"
+  bio = "Forged in the low-level systems logic of 42 São Paulo. Evolving into Agentic AI at FIAP."
+  links = [
+    { github = "https://github.com/felixruntime" },
+    { huggingface = "https://huggingface.co/felixruntime" },
+    { linkedin = "https://linkedin.com/in/" },
+  ]

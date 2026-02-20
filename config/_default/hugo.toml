@@ -1,0 +1,7 @@
+baseURL = "https://felixruntime.github.io/"
+languageCode = "en"
+title = "felixruntime"
+
+[module]
+  [[module.imports]]
+    path = "github.com/nunocoracao/blowfish/v2"
