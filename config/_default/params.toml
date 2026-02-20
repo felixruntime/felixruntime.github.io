@@ -1,4 +1,4 @@
-colorScheme = "blowfish"
+colorScheme = "neural"
 defaultAppearance = "dark"
 autoSwitchAppearance = false
 
@@ -6,13 +6,14 @@ enableSearch = true
 enableCodeCopy = true
 
 [homepage]
-  layout = "profile"
-  homepageImage = "img/author.jpg"
+  layout = "hero"
+  # homepageImage = "img/author.jpg"
   showRecent = true
-  showRecentItems = 5
+  showRecentItems = 6
   showMoreLink = true
   showMoreLinkDest = "/blog"
   cardView = true
+  cardViewScreenWidth = false
 
 [article]
   showDate = true
@@ -21,10 +22,26 @@ enableCodeCopy = true
   showReadingTime = true
   showTableOfContents = true
   showBreadcrumbs = true
+  showTaxonomies = true
+  showWordCount = false
+  showEdit = false
+  showPagination = true
+
+[list]
+  showBreadcrumbs = true
+  showTableOfContents = false
+  groupByYear = true
+  cardView = true
+
+[taxonomy]
+  showTermCount = true
+  cardView = false
 
 [header]
-  layout = "basic"
+  layout = "fixed"
 
 [footer]
   showCopyright = true
   showThemeAttribution = false
+  showAppearanceSwitcher = true
+  showScrollToTop = true

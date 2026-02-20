@@ -1,4 +1,4 @@
 ---
 title: "Runtime Insights"
-description: "AI strategy, technical deep-dives, and engineering notes."
+description: "Technical deep-dives on AI agents, systems engineering, and the architecture of intelligent software."
 ---

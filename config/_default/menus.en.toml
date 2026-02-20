@@ -2,13 +2,19 @@
   name = "Blog"
   pageRef = "blog"
   weight = 10
+  [main.params]
+    icon = "pencil"
 
 [[main]]
   name = "The Agentic Lab"
   pageRef = "projects"
   weight = 20
+  [main.params]
+    icon = "wand-magic-sparkles"
 
 [[main]]
   name = "Low-Level Foundation"
   pageRef = "foundation"
   weight = 30
+  [main.params]
+    icon = "code"
