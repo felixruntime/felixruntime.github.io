@@ -1,19 +1,19 @@
 [[main]]
-  name = "Blog"
+  name = "Runtime Logs"
   pageRef = "blog"
   weight = 10
   [main.params]
     icon = "pencil"
 
 [[main]]
-  name = "The Agentic Lab"
+  name = "Agentic Lab"
   pageRef = "projects"
   weight = 20
   [main.params]
     icon = "wand-magic-sparkles"
 
 [[main]]
-  name = "Low-Level Foundation"
+  name = "Systems Core"
   pageRef = "foundation"
   weight = 30
   [main.params]

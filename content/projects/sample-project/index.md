@@ -29,4 +29,4 @@ A multi-agent system built with **CrewAI** where specialized agents collaborate 
 - [GitHub Repository](https://github.com/felixruntime)
 - [Hugging Face Space](https://huggingface.co/felixruntime)
 
-*Full write-up coming soon on [Runtime Insights](/blog).*
+*Full write-up coming soon on [Runtime Logs](/blog).*

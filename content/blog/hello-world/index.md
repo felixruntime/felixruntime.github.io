@@ -7,14 +7,14 @@ tags: ["meta", "ai", "agents", "systems"]
 summary: "The runtime is live. A new space for writing on AI agents, systems architecture, and building software that thinks."
 ---
 
-This is the first entry in **Runtime Insights** — a space for technical writing on AI engineering, agentic systems, and the low-level foundations that make it all work.
+This is the first entry in **Runtime Logs** — a space for technical writing on AI engineering, agentic systems, and the low-level foundations that make it all work.
 
 ## What to expect
 
 - **Agentic AI:** Multi-agent orchestration with CrewAI, LangChain, and custom frameworks — how autonomous systems solve real problems.
 - **Technical Deep-Dives:** From transformer internals to production deployment patterns. How things work under the hood.
 - **Systems Thinking:** Lessons from C, Unix, and memory management that still apply when building reliable AI infrastructure.
-- **Project Breakdowns:** Every project in The Agentic Lab will get a detailed write-up here — architecture decisions, trade-offs, and results.
+- **Project Breakdowns:** Every project in the Agentic Lab will get a detailed write-up here — architecture decisions, trade-offs, and results.
 
 ## Why "Runtime"?
 
