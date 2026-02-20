@@ -1,13 +1,15 @@
 colorScheme = "neural"
 defaultAppearance = "dark"
 autoSwitchAppearance = false
+defaultBackgroundImage = "img/hero.png"
 
 enableSearch = true
 enableCodeCopy = true
 
 [homepage]
-  layout = "hero"
-  # homepageImage = "img/author.jpg"
+  layout = "background"
+  homepageImage = "img/hero.png"
+  layoutBackgroundBlur = true
   showRecent = true
   showRecentItems = 6
   showMoreLink = true
@@ -26,16 +28,25 @@ enableCodeCopy = true
   showWordCount = false
   showEdit = false
   showPagination = true
+  showHero = true
+  heroStyle = "background"
+  layoutBackgroundBlur = true
+  layoutBackgroundHeaderSpace = true
 
 [list]
   showBreadcrumbs = true
   showTableOfContents = false
   groupByYear = true
   cardView = true
+  showHero = true
+  heroStyle = "background"
+  layoutBackgroundBlur = true
 
 [taxonomy]
   showTermCount = true
   cardView = false
+  showHero = true
+  heroStyle = "background"
 
 [header]
   layout = "fixed"
