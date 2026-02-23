@@ -28,6 +28,7 @@ enableCodeCopy = true
   showWordCount = false
   showEdit = false
   showPagination = true
+  seriesOpened = true
   showHero = true
   heroStyle = "background"
   layoutBackgroundBlur = true
