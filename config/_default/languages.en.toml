@@ -13,5 +13,5 @@ weight = 1
   links = [
     { github = "https://github.com/felixruntime" },
     { huggingface = "https://huggingface.co/felixruntime" },
-    { linkedin = "https://www.linkedin.com/in/felixruntime/" },
+    { linkedin = "https://linkedin.com/in/" },
   ]
