@@ -1,0 +1,23 @@
+---
+title: "felixruntime"
+subtitle: "IA & Engenharia de Software aplicada a Negócios"
+image: assets/img/author.jpg
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/felixruntime
+    - icon: house-door
+      text: Hugging Face
+      href: https://huggingface.co/felixruntime
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/seu-perfil
+---
+
+Desenvolvedor focado na construção de soluções inteligentes e escaláveis. Unindo o rigor lógico da **42 São Paulo** à especialização em IA pela **FIAP**.
+
+Sob a marca **felixruntime**, foco na transição da IA experimental para a execução através de **Agentic AI** e fluxos autônomos.
+
+Minha missão: **construir, otimizar e escalar.**

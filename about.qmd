@@ -1,0 +1,21 @@
+---
+title: "Sobre"
+---
+
+## Estratégia e Execução
+
+A marca **felixruntime** representa a intersecção entre o código e a inteligência de alto nível.
+
+### Focos Atuais
+
+- **AI Agents**: Automação de workflows e sistemas autônomos que tomam decisões baseadas em contexto.
+- **Machine Learning para Business**: Modelagem preditiva com foco direto em ROI (Retorno sobre Investimento).
+- **Arquitetura de Performance**: Engenharia de software aplicada à infraestrutura necessária para sustentar modelos de IA em produção.
+
+---
+
+### Build in Public
+Acredito na transparência do desenvolvimento. Você pode acompanhar meus modelos, datasets e códigos brutos em:
+
+* 📂 **GitHub**: [github.com/felixruntime](https://github.com/felixruntime)
+* 🤗 **Hugging Face**: [huggingface.co/felixruntime](https://huggingface.co/felixruntime)

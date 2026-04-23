@@ -1,0 +1,8 @@
+---
+title: "Projects"
+listing:
+    contents: iris
+    type: grid
+    sort: "date asc"
+---
+> Challenges aren't roadblocks; they're blueprints for the next version of the plan.

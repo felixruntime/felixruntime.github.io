@@ -1,0 +1,22 @@
+/* css styles */
+/* Customização dos Cards de Projetos */
+.quarto-listing-container-grid .quarto-grid-item {
+    border: 1px solid #efefef;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.quarto-listing-container-grid .quarto-grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-color: #000; /* Borda preta ao passar o mouse */
+}
+
+.listing-categories .listing-category {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    font-weight: 700;
+}
