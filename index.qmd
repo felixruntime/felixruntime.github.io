@@ -13,7 +13,7 @@ about:
       href: https://huggingface.co/felixruntime
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com/in/seu-perfil
+      href: https://linkedin.com/in/felixruntime
 ---
 
 Desenvolvedor focado na construção de soluções inteligentes e escaláveis. Unindo o rigor lógico da **42 São Paulo** à especialização em IA pela **FIAP**.
