@@ -1,26 +1,21 @@
 name: Publish Website
-
 on:
   push:
     branches: [ main ]
-
 permissions:
   contents: write
   pages: write
   id-token: write
-
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Site
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
-
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
