@@ -3,7 +3,6 @@ name: FelixRuntime Auto-Render
 on:
   push:
     branches: [ main ]
-    
 permissions:
   contents: write
   pages: write
@@ -41,7 +40,7 @@ jobs:
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
-          working-directory: projects/iris-optimization 
+          working-directory: projects/iris-knn-optimization 
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
