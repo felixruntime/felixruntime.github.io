@@ -1,8 +1,15 @@
 ---
-title: "Projects"
+title: "Projetos"
 listing:
-    contents: iris
-    type: grid
-    sort: "date asc"
+  contents: 
+    - "*/index.qmd"      # Varre todas as pastas e busca o index principal
+  type: grid             # Layout clean e profissional
+  sort: "date desc"      # O mais recente primeiro
+  categories: true       # Filtros laterais (importante para recrutadores)
+  sort-ui: true          # Permite ao usuário reordenar
+  filter-ui: true        # Campo de busca rápida
+  fields: [image, date, title, subtitle, categories, reading-time]
 ---
+
 > Challenges aren't roadblocks; they're blueprints for the next version of the plan.
+
