@@ -28,13 +28,18 @@ npm run preview
 
 ## Deploy to GitHub Pages
 
+Deploy is automated via GitHub Actions on every push to `main`.
+
+1. Push to `main` — workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds and publishes `dist/`
+2. Site live at [https://felixruntime.github.io](https://felixruntime.github.io)
+
+Manual deploy (optional, uses `gh-pages` branch):
+
 ```bash
 npm run deploy
 ```
 
-This builds the project and publishes `dist/` to the `gh-pages` branch.
-
-Ensure your GitHub repository settings use the `gh-pages` branch as the Pages source (or root `/` if using user site).
+Repository Settings → Pages → Source must be **GitHub Actions** (configured automatically).
 
 ## Project Structure
 
