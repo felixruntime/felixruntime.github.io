@@ -1,0 +1,25 @@
+---
+description: Stack and conventions for Felix Runtime portfolio
+alwaysApply: true
+---
+
+# Project
+
+- React 19 + Vite + TypeScript + Tailwind CSS v4 + Framer Motion
+- Static site for GitHub Pages user site (`base: '/'`)
+- Spec-driven: implement only what is in `docs/specs/`
+- Language: English
+
+# Conventions
+
+- Functional components only
+- Static content lives in `src/data/` — never hardcode in section JSX
+- One spec = one file in `src/sections/`
+- UI primitives in `src/components/ui/`, layout in `src/components/layout/`
+- Use `cn()` from `src/lib/cn.ts` for conditional classes
+
+# Workflow
+
+- Read the relevant `docs/specs/NNN-*.md` before implementing a section
+- Follow `docs/DESIGN.md` for all visual decisions
+- Do not add features listed as out-of-scope in `docs/SPEC.md`

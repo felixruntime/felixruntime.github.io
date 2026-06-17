@@ -1,0 +1,34 @@
+---
+description: Futuristic dark design system rules
+globs: src/**/*.tsx
+alwaysApply: false
+---
+
+# Visual Rules
+
+Follow `docs/DESIGN.md` for all styling decisions.
+
+# Tokens
+
+Use Tailwind theme tokens, not hardcoded hex in components:
+
+- `bg-background`, `text-text`, `text-text-muted`
+- `text-accent-cyan`, `text-accent-purple`, `border-accent-cyan/30`
+
+# Components
+
+- Glass cards: `bg-white/5 backdrop-blur-md border border-white/10 rounded-xl`
+- Primary button: gradient `from-accent-cyan to-accent-purple`
+- Max hover scale: `1.02` via Framer Motion
+
+# Motion
+
+- Use Framer Motion for scroll fade-in and stagger
+- Check `prefers-reduced-motion` and skip animations when set
+- No infinite distracting loops on primary content
+
+# Accessibility
+
+- WCAG AA contrast on body text
+- `aria-label` on icon-only links
+- Visible focus rings: `focus-visible:ring-2 focus-visible:ring-accent-cyan/50`

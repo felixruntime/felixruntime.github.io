@@ -1,0 +1,29 @@
+---
+description: React component patterns
+globs: **/*.tsx
+alwaysApply: false
+---
+
+# React Patterns
+
+- Use functional components with named exports
+- Props interfaces named `{ComponentName}Props`
+- `src/sections/` maps 1:1 to `docs/specs/00N-*.md`
+- `src/components/ui/` contains reusable primitives only (Button, Card, Badge)
+- `src/components/layout/` contains Header, Footer, Section wrapper
+
+# Structure
+
+```tsx
+// Section example
+export function HeroSection() {
+  const data = profile; // import from src/data/
+  return <Section id="hero">...</Section>;
+}
+```
+
+# Avoid
+
+- Class components
+- Inline data arrays in section files
+- Default exports on components
