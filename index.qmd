@@ -29,9 +29,8 @@ Ex-cadete da 42 São Paulo com base em C e Linux. Cursando Tecnólogo em IA na F
 :::
 
 ::: {.hero-cta}
-[Projetos](projects/index.qmd){.cta-primary}
-[Blog](posts/index.qmd){.cta-secondary}
-[Sobre](about.qmd){.cta-secondary}
+<a href="https://github.com/felixruntime" class="hero-social" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+<a href="https://www.linkedin.com/in/felixruntime/" class="hero-social" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
 :::
 :::
 

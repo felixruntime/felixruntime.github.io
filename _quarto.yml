@@ -19,13 +19,6 @@ website:
         text: Blog
       - href: about.qmd
         text: Sobre
-    right:
-      - icon: github
-        href: https://github.com/felixruntime
-        aria-label: GitHub
-      - icon: rss
-        href: posts/index.xml
-        aria-label: RSS
   page-footer:
     left: "São Paulo, SP"
     center: "© Vinicius Felix"
