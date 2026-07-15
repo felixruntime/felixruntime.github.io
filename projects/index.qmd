@@ -1,0 +1,20 @@
+---
+title: "Projetos"
+listing:
+  id: projects-listing
+  contents: "*/index.qmd"
+  type: grid
+  sort: "date desc"
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  grid-columns: 1
+  grid-item-border: false
+  fields: [title, description, categories, date]
+page-layout: full
+---
+
+Projetos em dados, IA, APIs e edge computing.
+
+::: {#projects-listing}
+:::

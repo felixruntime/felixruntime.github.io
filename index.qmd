@@ -1,0 +1,82 @@
+---
+title: "felixruntime"
+pagetitle: "felixruntime"
+page-layout: full
+title-block-style: none
+listing:
+  - id: recent-posts
+    contents: "posts/*/index.qmd"
+    type: default
+    sort: "date desc"
+    max-items: 3
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    fields: [date, title, description]
+---
+
+::: {.hero}
+::: {.hero-brand}
+felixruntime
+:::
+
+::: {.hero-role}
+Dados · Inteligência Artificial · Python · Machine Learning
+:::
+
+::: {.hero-lead}
+Ex-cadete da 42 São Paulo com base em C e Linux. Cursando Tecnólogo em IA na FIAP.
+:::
+
+::: {.hero-cta}
+[Projetos](projects/index.qmd){.cta-primary}
+[Blog](posts/index.qmd){.cta-secondary}
+[Sobre](about.qmd){.cta-secondary}
+:::
+:::
+
+::: {.home-section}
+## Em destaque
+
+::: {.featured-list}
+
+::: {.featured-item}
+::: {.featured-head}
+[Sinapse API](projects/sinapse-api/index.qmd){.project-name}
+[Python · Flask · AWS]{.project-stack}
+:::
+
+API REST com Flask deployada em AWS EC2, com health check e tratamento de erros.
+:::
+
+::: {.featured-item}
+::: {.featured-head}
+[Pi Council](projects/pi-council/index.qmd){.project-name}
+[Python · Ollama · Edge AI]{.project-stack}
+:::
+
+Sistema multiagente local no Raspberry Pi 5 com modelos Llama, Qwen e Phi.
+:::
+
+::: {.featured-item}
+::: {.featured-head}
+[Iris KNN Optimization](projects/iris-knn-optimization/index.qmd){.project-name}
+[R · Quarto · EDA]{.project-stack}
+:::
+
+EDA do dataset Iris e preparação do classificador K-NN com relatório em Quarto.
+:::
+
+:::
+
+[Ver todos os projetos →](projects/index.qmd)
+:::
+
+::: {.home-section}
+## Do blog
+
+::: {#recent-posts}
+:::
+
+[Ver todos os posts →](posts/index.qmd)
+:::

@@ -1,0 +1,90 @@
+/*-- scss:defaults --*/
+
+$body-bg: #f2f4f7;
+$body-color: #12151a;
+$link-color: #0a7a5f;
+$primary: #0a7a5f;
+
+$font-family-sans-serif: "Public Sans", system-ui, sans-serif;
+$font-family-monospace: "IBM Plex Mono", ui-monospace, monospace;
+$headings-font-family: "Syne", "Public Sans", system-ui, sans-serif;
+$headings-font-weight: 700;
+$headings-color: #12151a;
+
+$navbar-bg: transparent;
+$navbar-fg: #12151a;
+$navbar-hl: #0a7a5f;
+$footer-bg: transparent;
+$footer-fg: #5a6169;
+
+$h1-font-size: 2.75rem;
+$h2-font-size: 1.65rem;
+$h3-font-size: 1.25rem;
+
+$code-color: #0a5c48;
+$code-bg: rgba(10, 122, 95, 0.08);
+
+/*-- scss:rules --*/
+
+.navbar {
+  border-bottom: 1px solid rgba(18, 21, 26, 0.08);
+  backdrop-filter: blur(8px);
+  background-color: rgba(242, 244, 247, 0.85) !important;
+}
+
+.navbar-brand {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Center primary nav links (Home, Projetos, Blog, Sobre) */
+@media (min-width: 992px) {
+  .navbar .navbar-container {
+    position: relative;
+  }
+
+  .navbar-brand-container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    z-index: 2;
+  }
+
+  #navbarCollapse {
+    position: static;
+    display: flex !important;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  #navbarCollapse > .navbar-nav.me-auto {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    z-index: 1;
+  }
+
+  #navbarCollapse > .navbar-nav.ms-auto,
+  #navbarCollapse > .quarto-navbar-tools {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.nav-footer {
+  border-top: 1px solid rgba(18, 21, 26, 0.08);
+  font-size: 0.875rem;
+}
+
+#title-block-header {
+  margin-bottom: 1.5rem;
+}
+
+#title-block-header .title {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}

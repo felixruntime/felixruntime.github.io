@@ -1,0 +1,22 @@
+---
+title: "Pi Council"
+description: "Sistema multiagente local no Raspberry Pi 5 com Ollama."
+date: 2026-03-01
+categories: [Python, LLMs, Edge AI, Raspberry Pi]
+---
+
+Sistema multiagente que roda localmente em um Raspberry Pi 5, usando Ollama com modelos Llama, Qwen e Phi.
+
+## O que faz
+
+- Seis agentes especializados: ML, Deep Learning, NLP, Visão, Edge AI e Estratégia
+- Debate e análise colaborativa entre agentes
+- Inferência local — sem depender de APIs na nuvem
+
+## Stack
+
+Python · Ollama · LLMs · Raspberry Pi · Edge AI · Git
+
+## Código
+
+[github.com/felixruntime/pi-council](https://github.com/felixruntime/pi-council)

@@ -1,0 +1,59 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "!_resume.md"
+
+website:
+  title: "felixruntime"
+  site-url: "https://felixruntime.github.io"
+  description: "Estágio em Dados e Inteligência Artificial · Python · Machine Learning"
+  navbar:
+    background: light
+    left:
+      - href: index.qmd
+        text: Home
+      - href: projects/index.qmd
+        text: Projetos
+      - href: posts/index.qmd
+        text: Blog
+      - href: about.qmd
+        text: Sobre
+    right:
+      - icon: github
+        href: https://github.com/felixruntime
+        aria-label: GitHub
+      - icon: rss
+        href: posts/index.xml
+        aria-label: RSS
+  page-footer:
+    left: "São Paulo, SP"
+    center: "© Vinicius Felix"
+    right:
+      - text: felixruntime.lab@gmail.com
+        href: mailto:felixruntime.lab@gmail.com
+      - icon: github
+        href: https://github.com/felixruntime
+        aria-label: GitHub
+  search: true
+  page-navigation: true
+
+format:
+  html:
+    lang: pt
+    theme:
+      - cosmo
+      - theme.scss
+    css: styles.css
+    toc: false
+    mainfont: "Public Sans"
+    monofont: "IBM Plex Mono"
+    linkcolor: "#0a7a5f"
+    include-in-header:
+      - text: |
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+execute:
+  freeze: auto

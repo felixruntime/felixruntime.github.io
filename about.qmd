@@ -1,0 +1,55 @@
+---
+title: "Sobre"
+about:
+  template: trestles
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/felixruntime
+    - icon: envelope
+      text: Email
+      href: mailto:felixruntime.lab@gmail.com
+---
+
+Ex-cadete da 42 São Paulo com base sólida em programação C e sistemas operacionais (Linux). Experiência prática em APIs REST, bancos relacionais e cloud AWS. Cursando Tecnólogo em Inteligência Artificial na FIAP, com projetos em Python, SQL, Pandas, Scikit-learn, redes neurais (Keras) e infraestrutura AWS.
+
+Perfil hands-on; busco estágio em dados ou IA para aplicar base de sistemas e Ops na construção de soluções de Machine Learning e análise de dados. Inglês fluente (experiência profissional nos EUA).
+
+## Skills
+
+::: {.skills-group}
+Linguagens de Programação
+: Python, C, JavaScript, SQL
+
+Dados e Análise
+: Pandas, NumPy, Matplotlib, Seaborn, PostgreSQL
+
+Machine Learning
+: Scikit-learn, Regressão Linear, Regressão Logística, K-NN, Árvores de Decisão, Random Forest
+
+Deep Learning
+: Keras, TensorFlow, Perceptron, MLP
+
+Cloud e Backend
+: AWS, EC2, RDS, FastAPI, Flask, APIs REST, Git, GitHub, Docker, Linux
+:::
+
+## Formação
+
+::: {.edu-item}
+**Tecnólogo em Inteligência Artificial**
+
+::: {.edu-meta}
+FIAP (Centro Universitário) — São Paulo, Brasil  
+Conclusão prevista: Dezembro de 2027
+:::
+:::
+
+::: {.edu-item}
+**Engenharia de Software**
+
+::: {.edu-meta}
+Escola 42 São Paulo — Brasil  
+Junho 2021 — Julho 2022
+:::
+:::

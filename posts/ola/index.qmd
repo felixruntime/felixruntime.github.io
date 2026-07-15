@@ -1,0 +1,19 @@
+---
+title: "Olá — este é o início"
+description: "Apresentação do site: homepage, portfólio e espaço para escrever sobre dados e IA."
+author: "Vinicius Felix"
+date: 2026-07-15
+categories: [site, apresentação]
+---
+
+Este site reúne três coisas que quero manter no mesmo lugar: quem eu sou, o que estou construindo e o que estou aprendendo.
+
+## O que você encontra aqui
+
+- **Home** — uma visão rápida do meu foco em dados e inteligência artificial
+- **Projetos** — Sinapse API, Pi Council, Iris KNN Optimization e o que vier a seguir
+- **Blog** — notas técnicas, experimentos e reflexões sobre o caminho
+
+Venho da 42 São Paulo (C e Linux), curso Tecnólogo em IA na FIAP e busco estágio em dados ou machine learning. Quero usar este espaço para documentar o processo — de APIs na AWS a agentes locais no Raspberry Pi.
+
+Se quiser conversar ou ver o código, estou no [GitHub](https://github.com/felixruntime) e em [felixruntime.lab@gmail.com](mailto:felixruntime.lab@gmail.com).

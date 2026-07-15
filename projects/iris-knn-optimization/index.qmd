@@ -1,0 +1,22 @@
+---
+title: "Iris KNN Optimization"
+description: "EDA do dataset Iris e preparação do classificador K-NN com Quarto."
+date: 2025-08-01
+categories: [R, Quarto, EDA, Machine Learning]
+---
+
+Análise exploratória do dataset Iris para preparar um classificador K-NN, com relatório reproduzível em Quarto.
+
+## O que faz
+
+- Estudo de separabilidade, outliers e estatísticas descritivas
+- Relatório em Quarto com tidyverse, ggplot2 e dplyr
+- Base para otimização do classificador K-NN
+
+## Stack
+
+R · Quarto · ggplot2 · dplyr · EDA · K-NN
+
+## Código
+
+[github.com/felixruntime/iris-knn-optimization](https://github.com/felixruntime/iris-knn-optimization)
