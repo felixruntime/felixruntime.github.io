@@ -8,7 +8,11 @@ categories: [fullstack-open, web, javascript]
 
 ## Introdução
 
-[Escreva a introdução da Part 0 aqui]
+Toda API que serve um modelo de Machine Learning, todo dashboard de dados em tempo real e qualquer interface de IA conversacional dependem de um mesmo pilar invisível: **o protocolo HTTP e a dinâmica cliente-servidor.**
+
+Na **Part 0** do [**Fullstack Open**](https://fullstackopen.com/ptbr/), o objetivo é dissecar essa infraestrutura web sob a ótica de arquitetura: *o que realmente acontece entre o clique do usuário, a transmissão do payload e a renderização do resultado?*
+
+Abaixo, listo as anotações e reflexões sobre requisições web, manipulação do DOM e a transição do modelo tradicional para Single Page Applications (SPAs) — a engrenagem essencial para transformar modelos em produtos de dados reais.
 
 ## Conceitos Principais
 

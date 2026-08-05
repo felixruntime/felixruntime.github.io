@@ -1,6 +1,6 @@
 ---
-title: "Fullstack Open: Part 0 — A Sinergia entre IA e Web Dev"
-description: "Iniciando a jornada Fullstack Open: motivação para unir Inteligência Artificial com Desenvolvimento Web e os fundamentos de aplicações web."
+title: "Fullstack Open: A Sinergia entre IA e Web Dev"
+description: "Iniciando a jornada Fullstack Open: motivação para unir Inteligência Artificial com Desenvolvimento Web e o hub da série."
 author: "Vinicius Felix"
 date: 2026-08-05
 categories: [fullstack-open, web, ia, dados]
@@ -24,7 +24,7 @@ Dominar os fundamentos do desenvolvimento web Fullstack me dá a autonomia neces
 
 Essa visão de levar soluções até a execução real é exatamente a origem do nome **`felixruntime`**. O conceito de *runtime* representa o ambiente em que o código ganha vida, executa e entrega valor em tempo real. Meu objetivo final é colocá-los rodando de ponta a ponta.
 
-O **Fullstack Open**, desenvolvido pela Universidade de Helsinque, é uma das referências globais mais respeitadas no ensino de desenvolvimento web moderno. Iniciar essa série e documentar cada módulo aqui no blog é o meu compromisso em unir a profundidade teórica e prática da IA com a solidez da Engenharia de Software.
+O [**Fullstack Open**](https://fullstackopen.com/ptbr/), desenvolvido pela Universidade de Helsinque, é uma das referências globais mais respeitadas no ensino de desenvolvimento web moderno. Iniciar essa série e documentar cada módulo aqui no blog é o meu compromisso em unir a profundidade teórica e prática da IA com a solidez da Engenharia de Software.
 
 ---
 

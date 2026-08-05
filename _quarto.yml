@@ -6,8 +6,9 @@ project:
 
 website:
   title: "felixruntime"
+  favicon: favicon.png
   site-url: "https://felixruntime.github.io"
-  description: "Estágio em Dados e Inteligência Artificial · Python · Machine Learning"
+  description: "Estágio em Dados,Desenvolvimento e Inteligência Artificial · Python · Machine Learning"
   navbar:
     background: light
     left:
@@ -34,6 +35,7 @@ website:
 format:
   html:
     lang: pt
+    link-external-newwindow: true
     theme:
       - cosmo
       - theme.scss
