@@ -1,0 +1,33 @@
+---
+title: "Fullstack Open: Part 0 — Fundamentos de Aplicações Web"
+description: "Anotações e conceitos principais do módulo Part 0 do curso Fullstack Open: protocolo HTTP, DOM, JavaScript e SPAs."
+author: "Vinicius Felix"
+date: 2026-08-05
+categories: [fullstack-open, web, javascript]
+---
+
+## Introdução
+
+[Escreva a introdução da Part 0 aqui]
+
+## Conceitos Principais
+
+### 1. HTTP e Comunicação Cliente-Servidor
+[Anotações sobre requisições HTTP, verbos, headers e status codes]
+
+### 2. HTML, CSS e JavaScript no Navegador
+[Anotações sobre como o browser carrega e renderiza páginas]
+
+### 3. Document Object Model (DOM) e Eventos
+[Anotações sobre a árvore DOM e manipulação via JS]
+
+### 4. SPA (Single Page Application) vs. Aplicações Tradicionais
+[Anotações sobre a diferença entre renderização no servidor (SSR) e no cliente (CSR)]
+
+## Exercícios e Prática
+
+[Espaço para documentar os exercícios realizados na Part 0]
+
+## Conclusão e Aprendizados
+
+[Resumo dos principais pontos aprendidos]
