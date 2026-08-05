@@ -1,0 +1,50 @@
+---
+title: "Fullstack Open: Part 0 — A Sinergia entre IA e Web Dev"
+description: "Iniciando a jornada Fullstack Open: motivação para unir Inteligência Artificial com Desenvolvimento Web e os fundamentos de aplicações web."
+author: "Vinicius Felix"
+date: 2026-08-05
+categories: [fullstack-open, web, ia, dados]
+---
+
+## 🚀 Por que um estudante de IA estuda Fullstack?
+
+Atualmente, curso Tecnólogo em Inteligência Artificial na FIAP e venho direcionando minha trajetória para as áreas de Dados e Machine Learning. Quem olha de fora pode se perguntar: *por que alguém focado em IA dedicaria tempo para estudar um curso intensivo de desenvolvimento web fullstack como o Fullstack Open?*
+
+A resposta curta é: **modelos de IA isolados em um Jupyter Notebook não geram valor de negócio sozinhos.**
+
+No mundo real, o trabalho de um profissional de Dados ou Machine Learning Engineer não termina no momento em que a métrica de acurácia do modelo atinge um valor satisfatório. Para que uma solução baseada em dados realmente gere impacto para empresas e usuários, ela precisa ser empacotada, disponibilizada e integrada ao ecossistema de software da organização.
+
+Isso significa que um modelo preditivo ou um agente de IA precisa:
+- Ser servido por **APIs REST ou GraphQL** eficientes e escaláveis.
+- Comunicar-se perfeitamente com bancos de dados relacionais e não relacionais.
+- Ter **interfaces amigáveis e reativas (frontend)** para que usuários finais ou times de negócio possam interagir com os resultados em tempo real.
+- Estar integrado a pipelines de CI/CD e ambientes conteinerizados.
+
+Dominar os fundamentos do desenvolvimento web Fullstack me dá a autonomia necessária para construir **produtos de dados end-to-end (de ponta a ponta)**. Ao dominar desde o funcionamento dos protocolos da web até a construção de servidores Node.js e interfaces em React, elimino a barreira entre o "experimento de dados" e o "produto em produção".
+
+Essa visão de levar soluções até a execução real é exatamente a origem do nome **`felixruntime`**. O conceito de *runtime* representa o ambiente em que o código ganha vida, executa e entrega valor em tempo real. Meu objetivo final é colocá-los rodando de ponta a ponta.
+
+O **Fullstack Open**, desenvolvido pela Universidade de Helsinque, é uma das referências globais mais respeitadas no ensino de desenvolvimento web moderno. Iniciar essa série e documentar cada módulo aqui no blog é o meu compromisso em unir a profundidade teórica e prática da IA com a solidez da Engenharia de Software.
+
+---
+
+## 📚 Índice da Série: Fullstack Open
+
+Esta postagem serve como o hub central da minha jornada no curso Fullstack Open. Abaixo, os módulos que compõem a série (os links serão adicionados conforme eu for completando e postando):
+
+- **Part 0:** Fundamentos de Aplicações Web
+- **Part 1:** Introdução ao React
+- **Part 2:** Comunicando com o Servidor
+- **Part 3:** Programação no backend com Node.js e Express
+- **Part 4:** Testando aplicações Express, administração de usuários
+- **Part 5:** Testando aplicações React
+- **Part 6:** Gerenciamento de estado avançado
+- **Part 7:** React router, custom hooks, estilização da aplicação e webpack
+- **Part 8:** GraphQL
+- **Part 9:** TypeScript
+- **Part 10:** React Native
+- **Part 11:** CI/CD
+- **Part 12:** Containers (Docker)
+- **Part 13:** Bancos de dados relacionais
+
+---
