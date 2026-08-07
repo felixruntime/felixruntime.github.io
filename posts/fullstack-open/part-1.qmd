@@ -1,0 +1,68 @@
+---
+title: "Fullstack Open: Part 1 — Introdução ao React"
+description: "Anotações e conceitos principais do módulo Part 1 do curso Fullstack Open: componentes React, JSX, props, gerenciamento de estado e manipulação de eventos."
+author: "Vinicius Felix"
+date: 2026-08-07
+categories: [fullstack-open, web, javascript, react]
+---
+
+## Introdução: A História e a Revolução do React
+
+![Tela do facebook em 2011](/posts/fullstack-open/images/facebook.png)
+
+Em 2011, o Facebook enfrentava um problema gigante de escala de código que quase todo desenvolvedor frontend da época conhecia bem: **a manipulação direta e manual do DOM estava se tornando inmanutenível.**
+
+A aplicação do Facebook contava com múltiplos elementos interdependentes na tela — feed de notícias, chat lateral, contador de notificações e barra de busca. Na época, o padrão da indústria era a arquitetura **MVC (Model-View-Controller)** com fluxo bidirecional de dados. Quando um modelo mudava, ele atualizava várias views, que por sua vez alteravam outros modelos.
+
+![Arquitetura MVC - Fluxo Bidirecional](/posts/fullstack-open/images/mvc_architecture.png)
+
+
+O resultado? O infame **"bug do chat do Facebook"**: o ícone de mensagens indicava uma nova mensagem não lida, mas ao abrir o chat, não havia nada lá. A barra de notificações dizia uma coisa, o chat dizia outra e o DOM estava fora de sintaxe. Ninguém no time sabia exatamente qual parte da aplicação havia mutado o estado.
+
+### 💡 A Ideia Radical de Jordan Walke
+
+Diante desse caos, **Jordan Walke**, um engenheiro do Facebook, propôs uma ideia inspirada na programação funcional que parecia loucura na época:
+
+> *"E se, em vez de tentarmos buscar elementos no DOM e atualizar pedacinho por pedacinho manualmente, nós simplesmente re-renderizássemos a interface inteira do zero a cada mudança de estado?"*
+
+A reação inicial da equipe foi de ceticismo: re-renderizar a árvore DOM do navegador a cada clique seria catastrófico para a performance. 
+
+Para resolver isso, nasceu a grande inovação técnica do React: o **Virtual DOM (VDOM)**. 
+Uma representação leve em memória do DOM real. Quando o estado da aplicação muda:
+1. O React cria uma nova árvore do Virtual DOM na memória em milissegundos.
+2. Compara a nova árvore com a anterior (*Diffing Algorithm*).
+3. Aplica **apenas as alterações estritamente necessárias** no DOM real do navegador (*Reconciliation*).
+
+---
+
+### 🎥 De Rejeitado na JSConf a Padrão da Indústria
+
+Em **maio de 2013**, o React foi apresentado publicamente na conferência *JSConf US*. A recepção inicial da comunidade foi fria — e até hostil. A ideia de escrever sintaxe semelhante a HTML dentro do JavaScript usando **JSX** violava o sacrossanto dogma da "Separação de Conceitos" (*Separation of Concerns*) defendido há décadas.
+
+No entanto, à medida que os engenheiros testavam a biblioteca, perceberam a elegância e a previsibilidade do **Fluxo Unidirecional de Dados**:
+
+$$\text{UI} = f(\text{State})$$
+
+A interface do usuário tornou-se uma **função pura do estado**. Se o estado é $X$, a tela é $Y$. Sem surpresas, sem efeitos colaterais ocultos e sem notificações fantasmas.
+
+::: {.callout-note}
+## 🎬 Documentário Recomendado: React: The Documentary (Honeypot)
+Para compreender os bastidores humanos, as brigas internas no Facebook, a resistência inicial da comunidade e a virada de chave histórica que transformou o React no ecossistema mais popular da web moderna, assista ao excelente documentário produzido pela **Honeypot**:
+
+{{< video https://www.youtube.com/watch?v=gmp0istg5xo >}}
+
+*(Um olhar fascinante sobre como uma ideia controversa de um único engenheiro revolucionou o desenvolvimento de software).*
+:::
+
+::: {.callout-tip}
+## ⚡ Leitura Prévia Recomendada: JavaScript Essentials for React
+Antes de mergulhar nos conceitos de JSX e Hooks do React, certifique-se de revisar os fundamentos avançados de ES6+ (imutabilidade, closures, métodos de array e assincronismo) no nosso guia dedicado:
+
+👉 [**Acessar a Revisão: JavaScript Essentials for React**](js-essentials.qmd)
+:::
+
+---
+
+## Conceitos Principais da Part 1
+
+[Anotações e exemplos dos conceitos da Part 1: Componentes, JSX, Props, Estado e Manipulação de Eventos]
