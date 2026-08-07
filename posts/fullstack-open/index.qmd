@@ -33,7 +33,7 @@ O [**Fullstack Open**](https://fullstackopen.com/ptbr/), desenvolvido pela Unive
 Esta postagem serve como o hub central da minha jornada no curso Fullstack Open. Abaixo, os módulos que compõem a série (os links serão adicionados conforme eu for completando e postando):
 
 - **Part 0:** [Fundamentos de Aplicações Web](part-0.qmd)
-- **Part 1:** Introdução ao React
+- **Part 1:** [Introdução ao React](part-1.qmd)
 - **Part 2:** Comunicando com o Servidor
 - **Part 3:** Programação no backend com Node.js e Express
 - **Part 4:** Testando aplicações Express, administração de usuários
