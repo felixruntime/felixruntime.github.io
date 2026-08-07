@@ -17,7 +17,38 @@ Abaixo, listo as anotações e reflexões sobre requisições web, manipulação
 ## Conceitos Principais
 
 ### 1. HTTP e Comunicação Cliente-Servidor
-[Anotações sobre requisições HTTP, verbos, headers e status codes]
+
+A base de todo o desenvolvimento web — e o ponto de partida essencial para o **Fullstack Open** — apoia-se no modelo **cliente-servidor**. Compreender esse fluxo não é apenas memorizar comandos, mas entender como dados trafegam através da rede para alimentar desde simples páginas estáticas até arquiteturas complexas de microsserviços e APIs de Inteligência Artificial.
+
+#### O Ciclo de Requisição e Resposta (Request/Response)
+A comunicação na web é estritamente orientada a mensagens. O navegador (cliente) inicia a conversa enviando uma **requisição HTTP** para um servidor. O servidor processa essa solicitação e devolve uma **resposta HTTP**. 
+
+Esse ciclo assíncrono é a engrenagem por trás de qualquer aplicação moderna: quando uma aplicação web em React precisa buscar uma lista de dados ou enviar um prompt para um modelo de linguagem, ela dispara uma requisição HTTP em segundo plano e aguarda o retorno do servidor sem interromper a experiência do usuário.
+
+#### A Anatomia de uma Requisição HTTP
+Para avançar com confiança na construção de APIs com Node.js e Express nos próximos módulos, é fundamental dominar três componentes de uma requisição:
+
+1. **Verbos HTTP (Métodos):** Definem a intenção do cliente sobre um recurso.
+   - **`GET`:** Solicita dados ao servidor sem provocar alterações de estado (ex: listar registros ou buscar o resultado de um modelo).
+   - **`POST`:** Envia novos dados no corpo da requisição para criar um recurso ou iniciar um processamento (ex: enviar um formulário ou um payload JSON com dados para treino/inferência).
+   - **`PUT` / `PATCH`:** Atualizam dados existentes no backend, seja substituindo o recurso por inteiro (`PUT`) ou modificando campos específicos (`PATCH`).
+   - **`DELETE`:** Solicita a remoção de um recurso específico no servidor.
+
+2. **Headers (Cabeçalhos):** Funcionam como o "envelope" da requisição, carregando metadados cruciais.
+   - `Content-Type: application/json` indica ao backend em qual formato a informação está sendo enviada.
+   - `Authorization: Bearer <token>` transporta credenciais de segurança para validar se o cliente tem permissão de acesso.
+
+3. **Corpo da Requisição (Body):** Onde trafegam os dados principais nas requisições `POST`, `PUT` ou `PATCH`, geralmente estruturados em formato **JSON** (JavaScript Object Notation).
+
+#### A Resposta e os Status Codes
+Ao receber a requisição, o servidor responde com os dados solicitados e um **Status Code**, um código numérico de três dígitos que sintetiza o resultado da operação:
+
+- **2xx (Sucesso):** Indica que a operação foi concluída como esperado (ex: `200 OK` para consultas bem-sucedidas ou `201 Created` quando um novo recurso é criado no banco).
+- **3xx (Redirecionamento):** O recurso solicitado mudou de endereço e o cliente deve ser redirecionado.
+- **4xx (Erros do Cliente):** Problemas na requisição enviada pelo cliente (ex: `400 Bad Request` para dados inválidos, `401 Unauthorized` para falta de autenticação, e `404 Not Found` quando a rota não existe).
+- **5xx (Erros do Servidor):** Falhas internas no backend (ex: `500 Internal Server Error` quando o código do servidor falha ou perde a conexão com o banco de dados).
+
+Dominar esse contrato de comunicação é o alicerce para construir e integrar sistemas fullstack escaláveis, garantindo que o frontend e o backend conversem em perfeito alinhamento.
 
 ### 2. HTML, CSS e JavaScript no Navegador
 [Anotações sobre como o browser carrega e renderiza páginas]
