@@ -145,7 +145,102 @@ Quando você digita uma URL no navegador, uma sequência precisa de passos acont
 Compreender que o JavaScript roda **diretamente no ambiente do cliente (browser)** é o ponto de virada para entender o modelo de desenvolvimento web moderno antes de avançarmos para o ecossistema React.
 
 ### 3. Document Object Model (DOM) e Eventos
-[Anotações sobre a árvore DOM e manipulação via JS]
+
+Se o código HTML é a **planta baixa de uma casa**, o **DOM (Document Object Model)** é a **casa construída na memória do navegador**. 
+
+Quando o browser lê o código HTML estático, ele constrói uma representação orientada a objetos composta por "nós" em formato de **árvore**. O JavaScript não lê o arquivo HTML diretamente; ele interage com essa árvore viva do DOM.
+
+```{mermaid}
+graph TD
+    doc["document"] --> html["html"]
+    html --> head["head"]
+    html --> body["body"]
+    head --> title["title: Meu Post"]
+    body --> h1["h1: Título Principal"]
+    body --> p["p: Parágrafo com texto"]
+    body --> btn["button: Clique aqui"]
+    
+    style doc fill:#e2e8f0,stroke:#334155,stroke-width:1px
+    style html fill:#cbd5e1,stroke:#334155,stroke-width:1px
+    style body fill:#bae6fd,stroke:#0284c7,stroke-width:1px
+    style head fill:#fef08a,stroke:#ca8a04,stroke-width:1px
+    style btn fill:#bbf7d0,stroke:#16a34a,stroke-width:1px
+```
+
+::: {.callout-tip}
+## 💡 Conexão de Conceitos: Árvore do DOM vs. Sistema de Arquivos do Linux
+Se você já usou o terminal Linux, essa estrutura parecerá extremamente familiar:
+- O **`document`** equivale ao **`/`** (diretório raiz ou *root*).
+- As tags container (como `<html>`, `<body>` ou `<div>`) funcionam como **pastas e subpastas**.
+- Os elementos finais (como `<button>` ou texto) funcionam como **arquivos**.
+- Um seletor CSS como `body > div#app > button` funciona exatamente como um caminho de arquivo absoluto (`/home/usuario/app`)!
+
+Ambos são exemplos clássicos de **Estruturas de Dados em Árvore Hieárquica (N-ary Tree)**.
+:::
+
+#### As Três Operações Fundamentais do DOM
+
+Toda manipulação interativa no frontend resume-se a três passos:
+
+1. **Selecionar (Querying):** Localizar o elemento desejado na árvore.
+   ```javascript
+   const botao = document.querySelector('#meu-botao');
+   ```
+2. **Escutar Eventos (Event Listeners):** Reagir a interações do usuário (cliques, digitação, movimento do mouse, envio de formulários).
+   ```javascript
+   botao.addEventListener('click', (event) => { ... });
+   ```
+3. **Modificar (Mutating):** Alterar o texto, classes CSS, estilos ou adicionar/remover novos nós HTML.
+   ```javascript
+   element.textContent = "Novo texto!";
+   element.classList.toggle("destaque");
+   ```
+
+---
+
+#### 🧪 Playground do DOM: Adicionando Itens em Tempo Real
+
+Abaixo está um exemplo prático de como o JavaScript escuta o evento de submit de um formulário, previne o comportamento padrão do navegador (`event.preventDefault()`) e insere um novo nó na árvore DOM:
+
+```{=html}
+<div style="border: 1px solid #cbd5e1; border-radius: 10px; padding: 1.2rem; background: #ffffff; margin: 1.5rem 0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+  <h5 style="margin-top: 0; color: #0f172a; font-weight: 600;">📝 Exemplo Prático: Manipulador de Eventos & DOM</h5>
+  
+  <form id="dom-todo-form" style="display: flex; gap: 8px; margin-bottom: 1rem;">
+    <input type="text" id="dom-todo-input" placeholder="Digite uma tarefa..." required style="flex: 1; padding: 8px 12px; border: 1px solid #94a3b8; border-radius: 6px; font-size: 0.9rem;">
+    <button type="submit" style="background-color: #0284c7; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer;">Adicionar</button>
+  </form>
+
+  <ul id="dom-todo-list" style="margin: 0; padding-left: 1.2rem; font-size: 0.9rem; color: #334155;">
+    <li>Item inicial carregado no HTML estático</li>
+  </ul>
+</div>
+
+<script>
+document.getElementById('dom-todo-form').addEventListener('submit', function(e) {
+  e.preventDefault(); // Impede o recarregamento da página ao enviar o formulário
+  
+  const input = document.getElementById('dom-todo-input');
+  const todoList = document.getElementById('dom-todo-list');
+  const itemText = input.value.trim();
+  
+  if (itemText !== '') {
+    // 1. Cria um novo elemento <li> na memória
+    const li = document.createElement('li');
+    li.textContent = itemText;
+    li.style.marginTop = '4px';
+    
+    // 2. Anexa o novo elemento como filho na lista DOM
+    todoList.appendChild(li);
+    
+    // 3. Limpa o campo de entrada
+    input.value = '';
+  }
+});
+</script>
+```
+
+Dominar o fluxo **Evento $\rightarrow$ Seleção $\rightarrow$ Manipulação do DOM** no JavaScript puro (Vanilla JS) é o conhecimento fundamental para compreender por que bibliotecas como o **React** foram criadas para abstrair essa complexidade.
 
 ### 4. SPA (Single Page Application) vs. Aplicações Tradicionais
 [Anotações sobre a diferença entre renderização no servidor (SSR) e no cliente (CSR)]
