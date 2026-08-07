@@ -18,6 +18,29 @@ Abaixo, listo as anotações e reflexões sobre requisições web, manipulação
 
 ### 1. HTTP e Comunicação Cliente-Servidor
 
+```{mermaid}
+graph LR
+    subgraph WebDocument [Web document]
+        direction TB
+        doc[Estrutura e Estilos]
+        img[image]
+        vid[Video]
+        adv[Advertisement]
+    end
+
+    doc -- "GET index.html<br>GET styles.css" --> web[Web server]
+    img -- "GET header.png" --> web
+    vid -- "GET video.mp4" --> video_server[Video server]
+    adv -- "GET advert.jpg" --> ad_server[Ad server]
+
+    style web fill:#aec1cf,stroke:#333,stroke-width:1px
+    style video_server fill:#c9c2d9,stroke:#333,stroke-width:1px
+    style ad_server fill:#a9def1,stroke:#333,stroke-width:1px
+    style img fill:#fdedcc,stroke:#e5b850,stroke-width:1px
+    style vid fill:#f7cece,stroke:#c75959,stroke-width:1px
+    style adv fill:#fbe6c4,stroke:#dda84d,stroke-width:1px
+```
+
 A base de todo o desenvolvimento web — e o ponto de partida essencial para o **Fullstack Open** — apoia-se no modelo **cliente-servidor**. Compreender esse fluxo não é apenas memorizar comandos, mas entender como dados trafegam através da rede para alimentar desde simples páginas estáticas até arquiteturas complexas de microsserviços e APIs de Inteligência Artificial.
 
 #### O Ciclo de Requisição e Resposta (Request/Response)
@@ -40,6 +63,7 @@ Para avançar com confiança na construção de APIs com Node.js e Express nos p
 
 3. **Corpo da Requisição (Body):** Onde trafegam os dados principais nas requisições `POST`, `PUT` ou `PATCH`, geralmente estruturados em formato **JSON** (JavaScript Object Notation).
 
+
 #### A Resposta e os Status Codes
 Ao receber a requisição, o servidor responde com os dados solicitados e um **Status Code**, um código numérico de três dígitos que sintetiza o resultado da operação:
 
@@ -51,7 +75,74 @@ Ao receber a requisição, o servidor responde com os dados solicitados e um **S
 Dominar esse contrato de comunicação é o alicerce para construir e integrar sistemas fullstack escaláveis, garantindo que o frontend e o backend conversem em perfeito alinhamento.
 
 ### 2. HTML, CSS e JavaScript no Navegador
-[Anotações sobre como o browser carrega e renderiza páginas]
+
+Para que uma página web ganhe vida, o navegador atua como um maestro orquestrando três linguagens fundamentais:
+
+- **HTML (A Estrutura):** Define o esqueleto e o significado do conteúdo (títulos, parágrafos, botões e formulários).
+  
+  ![Exemplo de estrutura pura em HTML sem estilização CSS (Página do CSS Zen Garden sem estilos).](images/html_raw.png)
+
+- **CSS (O Estilo):** Aplica a camada visual — cores, fontes, alinhamentos e responsividade — tornando a interface atraente e intuitiva.
+  
+  ![Exemplo da mesma estrutura HTML após a aplicação de estilos CSS.](images/css_garden.png)
+
+- **JavaScript (O Comportamento):** É o cérebro dinâmico. Permite reagir às ações do usuário, validar dados no próprio cliente e fazer requisições assíncronas ao servidor sem recarregar a página.
+  
+```{=html}
+<div id="js-demo-card" style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.2rem; background: #f8fafc; margin: 1.5rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+  <h5 style="margin-top: 0; color: #1e293b; font-weight: 600;">⚡ Mini-Demo Interativa: JavaScript em Ação</h5>
+  <p style="font-size: 0.92rem; color: #475569; margin-bottom: 1rem;">
+    Clique no botão abaixo para ver o JavaScript alterando o estado e manipulando o DOM em tempo real, sem recarregar a página:
+  </p>
+  <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+    <button id="demo-btn" onclick="triggerJsDemo()" style="background-color: #2563eb; color: white; border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.2s ease;">
+      Executar JS 🚀
+    </button>
+    <span id="demo-counter" style="font-weight: 600; color: #334155; font-size: 0.9rem;">Interações: 0</span>
+  </div>
+  <div id="demo-output" style="margin-top: 1rem; padding: 10px 14px; border-radius: 6px; background: #ffffff; border-left: 4px solid #2563eb; font-size: 0.88rem; color: #1e293b; display: none;">
+    <strong>Histórico de Eventos (DOM alterado via JS):</strong>
+    <ul id="demo-log-list" style="margin: 0.5rem 0 0 0; padding-left: 1.2rem; max-height: 150px; overflow-y: auto;"></ul>
+  </div>
+</div>
+
+<script>
+let interactions = 0;
+function triggerJsDemo() {
+  interactions++;
+  const btn = document.getElementById('demo-btn');
+  const counter = document.getElementById('demo-counter');
+  const output = document.getElementById('demo-output');
+  const logList = document.getElementById('demo-log-list');
+  
+  counter.textContent = `Interações: ${interactions}`;
+  output.style.display = 'block';
+  
+  // Cria dinamicamente um novo elemento de lista (li) no DOM
+  const newLogItem = document.createElement('li');
+  newLogItem.style.marginBottom = '4px';
+  newLogItem.innerHTML = `Clique #${interactions} registrado às <code>${new Date().toLocaleTimeString()}</code>`;
+  
+  // Adiciona o novo item no início da lista
+  logList.insertBefore(newLogItem, logList.firstChild);
+  
+  // Altera a cor do botão dinamicamente
+  const colors = ['#2563eb', '#059669', '#d97706', '#7c3aed', '#db2777'];
+  btn.style.backgroundColor = colors[interactions % colors.length];
+}
+</script>
+```
+
+#### O Fluxo de Carregamento e Execução
+
+Quando você digita uma URL no navegador, uma sequência precisa de passos acontece em milissegundos:
+
+1. **Download do HTML:** O navegador baixa o documento principal e começa a interpretar sua estrutura linha por linha (*parsing*).
+2. **Descoberta de Recursos:** Ao encontrar tags como `<link rel="stylesheet">` ou `<script>`, o browser dispara novas requisições HTTP para buscar os arquivos CSS e JS.
+3. **Renderização:** O CSS é aplicado sobre a estrutura do HTML para desenhar os pixels na tela (*paint*).
+4. **Execução do JS:** O motor JavaScript do navegador (como o V8 no Chrome) executa o código, podendo manipular a tela em tempo real ou escutar eventos do usuário.
+
+Compreender que o JavaScript roda **diretamente no ambiente do cliente (browser)** é o ponto de virada para entender o modelo de desenvolvimento web moderno antes de avançarmos para o ecossistema React.
 
 ### 3. Document Object Model (DOM) e Eventos
 [Anotações sobre a árvore DOM e manipulação via JS]
