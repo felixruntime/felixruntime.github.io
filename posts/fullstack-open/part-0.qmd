@@ -243,12 +243,337 @@ document.getElementById('dom-todo-form').addEventListener('submit', function(e) 
 Dominar o fluxo **Evento $\rightarrow$ Seleção $\rightarrow$ Manipulação do DOM** no JavaScript puro (Vanilla JS) é o conhecimento fundamental para compreender por que bibliotecas como o **React** foram criadas para abstrair essa complexidade.
 
 ### 4. SPA (Single Page Application) vs. Aplicações Tradicionais
-[Anotações sobre a diferença entre renderização no servidor (SSR) e no cliente (CSR)]
+
+Imagine duas experiências completamente diferentes em uma lanchonete:
+
+1. **A Aplicação Tradicional (MPA - Multi-Page Application):** Toda vez que você pede um acompanhamento novo, a lanchonete recolhe sua mesa inteira, joga o prato fora e traz uma mesa nova montada do zero com o novo pedido.
+2. **A Single Page Application (SPA):** A mesa permanece intacta. Quando você pede um acompanhamento novo, o garçom traz apenas aquela porção específica e coloca na sua mesa sem interromper sua refeição.
+
+Na Web, esse garçom é a requisição assíncrona (`AJAX` / API `fetch`) e a mesa é a tela do seu navegador.
+
+---
+
+#### 🔄 O Modelo Tradicional (Multi-Page Application - MPA)
+
+Nas primeiras décadas da web, **cada navegação ou envio de formulário resultava em um recarregamento completo da página**. 
+
+Quando você clicava em um link em um site como a **Wikipédia** ou em um portal de notícias antigo:
+1. O navegador enviava uma requisição `GET` para o servidor.
+2. O servidor consultava o banco de dados e montava um arquivo **HTML completo** contendo cabeçalho, rodapé, menus e o novo conteúdo.
+3. O navegador descartava a página atual, piscava a tela em branco e desenhava o novo HTML do zero.
+
+```{mermaid}
+graph TD
+    subgraph Cliente ["Navegador do Usuário"]
+        browser["Navegador"]
+    end
+    
+    subgraph Servidor ["Servidor Web Tradicional"]
+        router["Roteador Backend"]
+        db[(Banco de Dados)]
+        template["Engine de Templates HTML"]
+    end
+
+    browser -- "1. Clique em link ou Submit Form" --> router
+    router -- "2. Consulta dados" --> db
+    db -- "3. Retorna registros" --> router
+    router -- "4. Renderiza HTML completo no servidor" --> template
+    template -- "5. Envia página HTML pronta" --> browser
+    browser -- "6. Recarrega a tela inteira" --> browser
+
+    style browser fill:#e2e8f0,stroke:#334155
+    style router fill:#bae6fd,stroke:#0284c7
+    style template fill:#fef08a,stroke:#ca8a04
+```
+
+---
+
+#### 🚀 O Modelo Moderno: Single Page Application (SPA)
+
+Com a evolução do JavaScript e a introdução da API `XMLHttpRequest` (e posteriormente a API `fetch`), nasceu o conceito de **Single Page Application (SPA)**, popularizado por aplicações como **Gmail, Spotify Web, Netflix, Figma e Trello**.
+
+Em uma SPA, a aplicação HTML principal é baixada **apenas uma vez** no primeiro acesso. A partir daí:
+- O navegador carrega um bundle de JavaScript que assume o controle da interface.
+- Quando o usuário navega entre abas ou clica em botões, o JavaScript **não recarrega a página**.
+- Em vez disso, ele faz uma requisição em segundo plano para o servidor pedindo apenas **dados brutos no formato JSON**.
+- O JavaScript recebe o JSON e atualiza **apenas o nó específico da árvore DOM** necessário.
+
+```{mermaid}
+graph TD
+    subgraph Cliente ["Navegador do Usuário (SPA)"]
+        spaApp["App JavaScript / React"]
+        domTree["Árvore DOM Viva"]
+    end
+    
+    subgraph Servidor ["API Backend / Microsserviços"]
+        api["API RESTful / GraphQL"]
+        db[(Banco de Dados)]
+    end
+
+    spaApp -- "1. Requisita API em segundo plano" --> api
+    api -- "2. Busca apenas dados" --> db
+    db -- "3. Retorna registros" --> api
+    api -- "4. Responde com JSON puro" --> spaApp
+    spaApp -- "5. Modifica pontualmente o DOM sem reload" --> domTree
+
+    style spaApp fill:#bbf7d0,stroke:#16a34a
+    style domTree fill:#bae6fd,stroke:#0284c7
+    style api fill:#c9c2d9,stroke:#6b21a8
+```
+
+---
+
+#### 📊 Comparativo Direto: MPA vs. SPA
+
+| Critério | Aplicação Tradicional (MPA) | Single Page Application (SPA) |
+| :--- | :--- | :--- |
+| **Recarregamento de Tela** | Ocorre a cada clique/navegação (Flicker visual) | Ocorre apenas na carga inicial (Zero flicker) |
+| **Resposta do Servidor** | Documentos HTML inteiros | Dados em formato JSON |
+| **Renderização (UI)** | **SSR** (*Server-Side Rendering* tradicional) | **CSR** (*Client-Side Rendering*) |
+| **Experiência do Usuário (UX)** | Semelhante a folhear um documento impresso | Semelhante a um aplicativo nativo desktop/mobile |
+| **Preservação de Estado** | O estado local é perdido no recarregamento | O estado do JS (player de música, filtros) continua ativo |
+| **Exemplos do Mundo Real** | Wikipédia, sites governamentais clássicos | Gmail, Spotify Web, Trello, Twitter/X |
+
+---
+
+#### 🧪 Simulador Interativo: Sinta a Diferença entre MPA e SPA
+
+Experimente o widget abaixo para ver na prática como as duas arquiteturas se comportam quando o usuário solicita novos dados:
+
+```{=html}
+<div style="border: 1px solid #cbd5e1; border-radius: 12px; padding: 1.5rem; background: #ffffff; margin: 2rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+  <h5 style="margin-top: 0; color: #0f172a; font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+    ⚡ Simulador Interativo: MPA (Tradicional) vs. SPA (Moderno)
+  </h5>
+  <p style="font-size: 0.92rem; color: #475569; margin-bottom: 1.2rem;">
+    Observe o comportamento do <strong>Player de Música</strong> no topo enquanto você busca novos conteúdos nos dois modos:
+  </p>
+
+  <!-- Player Fictício de Música no Topo -->
+  <div id="sim-player" style="background: #1e293b; color: #f8fafc; padding: 10px 16px; border-radius: 8px; margin-bottom: 1.2rem; display: flex; align-items: center; justify-content: space-between;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span style="font-size: 1.2rem;">🎵</span>
+      <div>
+        <div style="font-size: 0.85rem; font-weight: 600;">Tocando: Podcast Fullstack Open - Episódio 0</div>
+        <div id="sim-player-time" style="font-size: 0.75rem; color: #94a3b8;">Tocando há <span id="timer-sec">0</span> segundos...</div>
+      </div>
+    </div>
+    <span style="background: #22c55e; color: #052e16; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">ATIVO</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+    
+    <!-- Painel MPA -->
+    <div id="mpa-panel" style="border: 1px solid #fca5a5; background: #fff5f5; border-radius: 8px; padding: 1rem; position: relative; overflow: hidden;">
+      <h6 style="margin-top: 0; color: #991b1b; font-weight: 700;">1. Modelo Tradicional (MPA)</h6>
+      <p style="font-size: 0.82rem; color: #7f1d1d; margin-bottom: 0.8rem;">
+        Recarrega a página inteira. O estado da UI (como o áudio) é reiniciado do zero.
+      </p>
+      <button onclick="simulateMpaReload()" style="background: #dc2626; color: white; border: none; padding: 7px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">
+        Carregar Nova Página 🔄
+      </button>
+      <div id="mpa-content" style="margin-top: 0.8rem; padding: 8px; background: white; border-radius: 6px; font-size: 0.82rem; border: 1px solid #fecaca; color: #334155;">
+        Página 1 baixada do servidor.
+      </div>
+      <!-- Overlay de Reload simulado -->
+      <div id="mpa-overlay" style="display: none; position: absolute; inset: 0; background: rgba(255,255,255,0.95); justify-content: center; align-items: center; flex-direction: column; gap: 8px; z-index: 10;">
+        <div style="border: 3px solid #f3f3f3; border-top: 3px solid #dc2626; border-radius: 50%; width: 24px; height: 24px; animation: spin 0.8s linear infinite;"></div>
+        <span style="font-size: 0.8rem; font-weight: 600; color: #991b1b;">Servidor gerando novo HTML...</span>
+      </div>
+    </div>
+
+    <!-- Painel SPA -->
+    <div id="spa-panel" style="border: 1px solid #86efac; background: #f0fdf4; border-radius: 8px; padding: 1rem;">
+      <h6 style="margin-top: 0; color: #166534; font-weight: 700;">2. Single Page App (SPA)</h6>
+      <p style="font-size: 0.82rem; color: #14532d; margin-bottom: 0.8rem;">
+        Busca apenas JSON via API. O player continua tocando sem interrupção!
+      </p>
+      <button onclick="simulateSpaFetch()" style="background: #16a34a; color: white; border: none; padding: 7px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">
+        Buscar JSON em 2º plano ⚡
+      </button>
+      <div id="spa-content" style="margin-top: 0.8rem; padding: 8px; background: white; border-radius: 6px; font-size: 0.82rem; border: 1px solid #bbf7d0; color: #334155;">
+        Dados atuais: <code>{ "page": 1, "status": "ok" }</code>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+<script>
+// Timer do Player de Áudio Simulado
+let audioSeconds = 0;
+setInterval(() => {
+  audioSeconds++;
+  const el = document.getElementById('timer-sec');
+  if (el) el.textContent = audioSeconds;
+}, 1000);
+
+// Simulação de Recarregamento MPA
+function simulateMpaReload() {
+  const overlay = document.getElementById('mpa-overlay');
+  const mpaContent = document.getElementById('mpa-content');
+  overlay.style.display = 'flex';
+  
+  setTimeout(() => {
+    overlay.style.display = 'none';
+    // Reinicia o estado global simulando refresh de página completa!
+    audioSeconds = 0;
+    document.getElementById('timer-sec').textContent = '0';
+    mpaContent.innerHTML = `Página ${Math.floor(Math.random() * 50 + 2)} baixada via HTML integral do servidor!`;
+  }, 900);
+}
+
+// Simulação de Fetch Assíncrono SPA
+let spaPageCount = 1;
+function simulateSpaFetch() {
+  const spaContent = document.getElementById('spa-content');
+  spaPageCount++;
+  spaContent.style.opacity = '0.5';
+  
+  setTimeout(() => {
+    spaContent.style.opacity = '1';
+    // Atualiza apenas o bloco JSON sem zerar o timer de áudio!
+    spaContent.innerHTML = `Dados recebidos via JSON (HTTP 200):<br><code>{ "page": ${spaPageCount}, "items": ["Item A", "Item B"], "timestamp": "${new Date().toLocaleTimeString()}" }</code>`;
+  }, 300);
+}
+</script>
+```
+
+::: {.callout-note}
+## 🧠 Reflexão de Arquitetura: Por que isso importa para Engenharia de Dados e IA?
+Quando construímos dashboards interativos para modelos de Machine Learning (usando React, Vue ou mesmo frameworks como Streamlit/Gradio), estamos operando no padrão **SPA**: o modelo gera predições e responde com payloads JSON leves, enquanto a interface do usuário permanece fluida, responsiva e pronta para novas interações sem recarregar o navegador.
+:::
+
 
 ## Exercícios e Prática
 
-[Espaço para documentar os exercícios realizados na Part 0]
+Abaixo estão documentados os diagramas de sequência desenvolvidos durante a resolução dos exercícios propostos na **Part 0** do Fullstack Open:
+
+---
+
+### Exercício 0.4: Diagrama de Criar Nova Nota (Aplicação Tradicional / MPA)
+
+Neste modelo tradicional, ao enviar o formulário HTML (`POST /new_note`), o servidor responde com um código HTTP `302 Found` (Redirecionamento) forçando o navegador a recarregar e reconstruir toda a página via `GET /notes`.
+
+```{mermaid}
+sequenceDiagram
+    autonumber
+    actor Usuario as Usuário
+    participant Navegador as Navegador (Browser)
+    participant Servidor as Servidor (Node.js/Express)
+
+    Usuario->>Navegador: Digita a nova nota e clica em "Salvar"
+    Navegador->>Servidor: POST https://studies.cs.helsinki.fi/exampleapp/new_note<br/>Payload: note="Minha nova nota"
+    activate Servidor
+    Note over Servidor: Servidor adiciona a nova nota ao array de notas na memória
+    Servidor-->>Navegador: HTTP 302 Found (Redirecionamento para /notes)
+    deactivate Servidor
+
+    Navegador->>Servidor: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate Servidor
+    Servidor-->>Navegador: Código HTML (index.html)
+    deactivate Servidor
+
+    Navegador->>Servidor: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate Servidor
+    Servidor-->>Navegador: Arquivo de Estilo CSS
+    deactivate Servidor
+
+    Navegador->>Servidor: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate Servidor
+    Servidor-->>Navegador: Código JavaScript (main.js)
+    deactivate Servidor
+
+    Note over Navegador: Navegador executa main.js que dispara requisição para buscar os dados JSON
+
+    Navegador->>Servidor: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate Servidor
+    Servidor-->>Navegador: Array de notas JSON [{ content: "...", date: "..." }, ...]
+    deactivate Servidor
+
+    Note over Navegador: O navegador executa a função de callback e renderiza a lista completa de notas no DOM
+```
+
+---
+
+### Exercício 0.5: Diagrama de Carga Inicial da Single Page Application (SPA)
+
+Ao acessar a versão SPA da aplicação (`/spa`), o navegador faz o download dos arquivos iniciais. Uma vez carregado o script `spa.js`, ele assume o controle da renderização e busca os dados de forma assíncrona.
+
+```{mermaid}
+sequenceDiagram
+    autonumber
+    actor Usuario as Usuário
+    participant Navegador as Navegador (Browser)
+    participant Servidor as Servidor (Node.js/Express)
+
+    Usuario->>Navegador: Acessa o endereço https://studies.cs.helsinki.fi/exampleapp/spa
+    Navegador->>Servidor: GET https://studies.cs.helsinki.fi/exampleapp/spa
+    activate Servidor
+    Servidor-->>Navegador: Documento HTML estático básico
+    deactivate Servidor
+
+    Navegador->>Servidor: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate Servidor
+    Servidor-->>Navegador: Arquivo de Estilo CSS
+    deactivate Servidor
+
+    Navegador->>Servidor: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    activate Servidor
+    Servidor-->>Navegador: Script SPA JavaScript (spa.js)
+    deactivate Servidor
+
+    Note over Navegador: O navegador inicia a execução do spa.js
+
+    Navegador->>Servidor: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate Servidor
+    Servidor-->>Navegador: Dados brutos em JSON contendo a lista de notas
+    deactivate Servidor
+
+    Note over Navegador: O spa.js lê o JSON e monta dinamicamente a lista <ul> no DOM
+```
+
+---
+
+### Exercício 0.6: Diagrama de Criar Nova Nota na SPA
+
+Diferente do modelo tradicional, ao salvar uma nota na SPA, o formulário **não redireciona nem recarrega a tela**. O JavaScript captura o envio, atualiza o DOM local imediatamente (*Optimistic Update*) e envia o payload JSON via HTTP `POST` em segundo plano.
+
+```{mermaid}
+sequenceDiagram
+    autonumber
+    actor Usuario as Usuário
+    participant Navegador as Navegador (Browser / spa.js)
+    participant Servidor as Servidor (API Backend)
+
+    Usuario->>Navegador: Digita o texto e clica em "Salvar"
+    Note over Navegador: 1. spa.js previne o reload nativo (e.preventDefault())<br/>2. Adiciona a nota no array local<br/>3. Re-renderiza dinamicamente a lista no DOM<br/>4. Limpa o campo de entrada
+
+    Navegador->>Servidor: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa<br/>Content-Type: application/json<br/>Body: {"content": "Nova nota na SPA", "date": "2026-08-07..."}
+    activate Servidor
+    Note over Servidor: Servidor processa o JSON e salva a nota no banco/memória
+    Servidor-->>Navegador: HTTP 201 Created {"message": "note created"}
+    deactivate Servidor
+
+    Note over Navegador: NENHUMA requisição adicional de HTML ou recarregamento de página ocorre!
+```
+
+---
 
 ## Conclusão e Aprendizados
 
-[Resumo dos principais pontos aprendidos]
+A **Part 0** do Fullstack Open estabelece a fundação teórica e prática indispensável para qualquer engenheiro de software:
+
+1. **A teia invisível do HTTP:** Toda interação web é regida por requisições e respostas baseadas em contratos claros (métodos, headers, payloads e status codes).
+2. **A vida dentro da memória do navegador (DOM):** Entender a árvore do DOM e como eventos acionam manipulações JS puro é o segredo para compreender a mágica e o valor de frameworks reativos como o **React**.
+3. **A evolução da experiência do usuário (MPA vs. SPA):** A transição do recarregamento total da página (SSR tradicional) para consumo de dados JSON em segundo plano (CSR/SPA) foi o grande divisor de águas da web moderna.
+
+Com essa base consolidada, os próximos passos envolvem mergulhar na **Part 1**, aprendendo a utilizar o **React** para criar componentes reativos, gerenciar estado com clareza e construir interfaces prontas para o mundo real.
+
