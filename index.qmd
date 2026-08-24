@@ -25,7 +25,7 @@ Dados · Inteligência Artificial · Python · Machine Learning
 :::
 
 ::: {.hero-lead}
-Ex-cadete da 42 São Paulo com base em C e Linux. Cursando Tecnólogo em IA na FIAP.
+Ex-cadete da 42 São Paulo com base em C e Linux. Cursando Tecnólogo em Agentes Inteligentes na FIAP.
 :::
 
 ::: {.hero-cta}

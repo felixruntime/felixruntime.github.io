@@ -8,7 +8,7 @@ Estágio em Dados e Inteligência Artificial | Python | Machine Learning
 
 ## Perfil
 
-Ex-cadete da 42 São Paulo com base sólida em programação C e sistemas operacionais (Linux). Experiência prática em APIs REST, bancos relacionais e cloud AWS. Cursando Tecnólogo em Inteligência Artificial na FIAP, com projetos em Python, SQL, Pandas, Scikit-learn, redes neurais (Keras) e infraestrutura AWS. Perfil hands-on; busco estágio em dados ou IA para aplicar base de sistemas e Ops na construção de soluções de Machine Learning e análise de dados. Inglês fluente (experiência profissional nos EUA).
+Ex-cadete da 42 São Paulo com base sólida em programação C e sistemas operacionais (Linux). Experiência prática em APIs REST, bancos relacionais e cloud AWS. Cursando Tecnólogo em Agentes Inteligentes na FIAP, com projetos em Python, SQL, Pandas, Scikit-learn, redes neurais (Keras) e infraestrutura AWS. Perfil hands-on; busco estágio em dados ou IA para aplicar base de sistemas e Ops na construção de soluções de Machine Learning e análise de dados. Inglês fluente (experiência profissional nos EUA).
 
 ---
 
@@ -28,7 +28,7 @@ Cloud e Backend: AWS, EC2, RDS, FastAPI, Flask, APIs REST, Git, GitHub, Docker, 
 
 ## Formação Acadêmica
 
-Tecnólogo em Inteligência Artificial
+Tecnólogo em Agentes Inteligentes
 FIAP (Centro Universitário) — São Paulo, Brasil
 Conclusão prevista: Dezembro de 2027
 
